@@ -11,7 +11,8 @@ packages = [
     "pandas",
     "mplsoccer",
     "numpy",
-    "matplotlib"
+    "matplotlib",
+    "plotly"
 ]
 import subprocess
 import sys
@@ -26,7 +27,8 @@ packages = [
     "pandas",
     "mplsoccer",
     "numpy",
-    "matplotlib"
+    "matplotlib",
+    "plotly"
 ]
 
 # Install all required packages
@@ -44,7 +46,7 @@ from mplsoccer import Pitch
 import numpy as np
 import matplotlib.pyplot as plt
 from multiprocessing import freeze_support
-
+import plotly.express as px
 
 def main():
     BayerL_Pass=pd.read_csv(r"BayerL_Pass.csv")
@@ -85,6 +87,14 @@ def main():
         ax.text(df.iloc[i]['x'], df.iloc[i]['y'], f'Pass-{i+1}', color='white', fontsize=10)
 
     st.pyplot(fig)
+    
+
+    # Plot interactive bar graph for number of passes by each player
+    pass_counts = df['player'].value_counts().reset_index()
+    pass_counts.columns = ['Player', 'Number of Passes']
+
+    fig = px.bar(pass_counts, x='Player', y='Number of Passes', title='Number of Passes by Each Player')
+    st.plotly_chart(fig)
 
 if __name__ == '__main__':
     freeze_support()  # Ensures proper initialization on Windows

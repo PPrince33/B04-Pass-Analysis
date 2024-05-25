@@ -13,6 +13,13 @@ packages = [
     "numpy",
     "matplotlib"
 ]
+# Install all required packages
+for package in packages:
+    try:
+        install(package)
+    except subprocess.CalledProcessError as e:
+        print(f"Failed to install {package}: {e}")
+        
 import streamlit as st
 import pandas as pd
 from mplsoccer import Pitch

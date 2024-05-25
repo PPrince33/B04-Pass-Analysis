@@ -47,7 +47,7 @@ from multiprocessing import freeze_support
 
 
 def main():
-    BayerL_Pass=pd.read_csv(r"https://github.com/PPrince33/B04-Pass-Analysis/blob/main/BayerL_Pass.csv")
+    BayerL_Pass=pd.read_csv(r"BayerL_Pass.csv")
 
 
 

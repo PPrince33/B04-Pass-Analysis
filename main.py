@@ -1,3 +1,4 @@
+pip install mplsoccer
 import streamlit as st
 import pandas as pd
 from mplsoccer import Pitch

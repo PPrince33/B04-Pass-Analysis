@@ -1,4 +1,3 @@
-pip install statsbombpy
 import streamlit as st
 from statsbombpy import sb
 import pandas as pd

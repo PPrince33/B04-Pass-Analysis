@@ -3,22 +3,6 @@ import sys
 
 # Function to install a package using pip
 def install(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "--user", package])
-
-# List of required packages
-packages = [
-    "streamlit",
-    "pandas",
-    "mplsoccer",
-    "numpy",
-    "matplotlib",
-    "plotly"
-]
-import subprocess
-import sys
-
-# Function to install a package using pip
-def install(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 
 # List of required packages
